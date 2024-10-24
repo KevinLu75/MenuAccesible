@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Accesible</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .category-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+        .food-list {
+            display: none;
+            padding-left: 20px;
+        }
+        .expanded .food-list {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Nuestro Menú</h1>
+
+
+    <section>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="desayunos-list">Desayunos</h2>
+        <ul id="desayunos-list" class="food-list" role="list" aria-labelledby="desayunos-list">
+            <li role="listitem">Chilaquiles - $135</li>
+            <li role="listitem">Norteño - $210</li>
+            <li role="listitem">Machaca de res - $170</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="regionales-list">Regionales</h2>
+        <ul id="regionales-list" class="food-list" role="list" aria-labelledby="regionales-list">
+            <li role="listitem">Tamales - $150</li>
+            <li role="listitem">Higado - $140</li>
+            <li role="listitem">Bistec ranchero con papas - $215</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="Sopas-list">Sopas</h2>
+        <ul id="Sopas-list" class="food-list" role="list" aria-labelledby="Sopas-list">
+            <li role="listitem">Caldo de pollo - $110</li>
+            <li role="listitem">Caldo de queso - $110</li>
+            <li role="listitem">Sopa de tortilla - $120</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="bebidas-list">Bebidas</h2>
+        <ul id="bebidas-list" class="food-list" role="list" aria-labelledby="bebidas-list">
+            <li role="listitem">Agua embotellada - $15</li>
+            <li role="listitem">Vaso de leche - $35</li>
+            <li role="listitem">Refresco - $85</li>
+        </ul>
+    </section>
+
+    <script>
+        // Función para controlar la expansión y contracción de las categorías
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                this.parentElement.classList.toggle('expanded');
+            });
+
+            header.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    this.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
