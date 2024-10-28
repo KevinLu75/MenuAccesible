@@ -1,5 +1,5 @@
-// Función para controlar la expansión y contracción de las categorías
-document.querySelectorAll('.category-header').forEach(header => {
+ // Función para controlar la expansión y contracción de las categorías
+ document.querySelectorAll('.category-header').forEach(header => {
     header.addEventListener('click', function() {
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !expanded);
@@ -18,6 +18,8 @@ document.querySelectorAll('.food-item').forEach(item => {
     item.addEventListener('click', function() {
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !expanded);
+        const description = document.getElementById(this.getAttribute('aria-controls'));
+        description.style.display = expanded ? 'none' : 'block';
     });
 
     item.addEventListener('keypress', function(event) {
