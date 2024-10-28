@@ -13,6 +13,7 @@ body {
     display: none;
     list-style-type: none;
     padding-left: 0; /* Opcional: elimina la sangría izquierda */
+    margin-top: 20px;
 }
 .expanded .food-list {
     display: block;
@@ -25,4 +26,12 @@ body {
 
 .food-item[aria-expanded="true"] .description {
     display: block;
+}
+.food-item{
+    padding-top: 20px;
+}
+
+.description-container {
+    display: none;
+    margin-left: 20px;
 }

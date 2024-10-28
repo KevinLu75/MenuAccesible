@@ -14,19 +14,18 @@
     <section>
         <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="desayunos-list">Desayunos</h2>
         <ul id="desayunos-list" class="food-list" role="list" aria-labelledby="desayunos-list">
-            <li tabindex="0" aria-expanded="false" class="food-item" aria-controls="desc-chilaquiles">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Chilaquiles con salsa verde o roja, acompañados de crema y queso.">
                 Chilaquiles - $135
-                <p id="desc-chilaquiles" class="description" aria-live="polite">Chilaquiles con salsa verde o roja, acompañados de crema y queso.</p>
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" aria-controls="desc-norteno">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Delicioso desayuno norteño con carne asada y frijoles.">
                 Norteño - $210
-                <p id="desc-norteno" class="description" aria-live="polite">Delicioso desayuno norteño con carne asada y frijoles.</p>
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" aria-controls="desc-machaca">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Machaca de res desmenuzada con huevo y tortillas de maíz.">
                 Machaca de res - $170
-                <p id="desc-machaca" class="description" aria-live="polite">Machaca de res desmenuzada con huevo y tortillas de maíz.</p>
             </li>
         </ul>
+        <!-- Contenedor de descripción accesible -->
+        <div id="description" class="description-container" aria-live="polite"></div>
     </section>
 
     <section>
