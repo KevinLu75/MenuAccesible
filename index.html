@@ -3,29 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/style.css">
     <title>Menú Accesible</title>
-    <style>
-        /* Estilos básicos */
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        .category-header {
-            background-color: #f0f0f0;
-            padding: 10px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-        }
-        .food-list {
-            display: none;
-            list-style-type: none;
-            padding-left: 0; /* Opcional: elimina la sangría izquierda */
-        }
-        .expanded .food-list {
-            display: block;
-        }
-        
-    </style>
 </head>
 <body>
 
@@ -35,9 +14,18 @@
     <section>
         <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="desayunos-list">Desayunos</h2>
         <ul id="desayunos-list" class="food-list" role="list" aria-labelledby="desayunos-list">
-            <li>Chilaquiles - $135</li>
-            <li>Norteño - $210</li>
-            <li>Machaca de res - $170</li>
+            <li tabindex="0" aria-expanded="false" class="food-item" aria-controls="desc-chilaquiles">
+                Chilaquiles - $135
+                <p id="desc-chilaquiles" class="description">Chilaquiles con salsa verde o roja, acompañados de crema y queso.</p>
+            </li>
+            <li tabindex="0" aria-expanded="false" class="food-item" aria-controls="desc-norteno">
+                Norteño - $210
+                <p id="desc-norteno" class="description">Delicioso desayuno norteño con carne asada y frijoles.</p>
+            </li>
+            <li tabindex="0" aria-expanded="false" class="food-item" aria-controls="desc-machaca">
+                Machaca de res - $170
+                <p id="desc-machaca" class="description">Machaca de res desmenuzada con huevo y tortillas de maíz.</p>
+            </li>
         </ul>
     </section>
 
@@ -68,21 +56,6 @@
         </ul>
     </section>
 
-    <script>
-        // Función para controlar la expansión y contracción de las categorías
-        document.querySelectorAll('.category-header').forEach(header => {
-            header.addEventListener('click', function() {
-                const expanded = this.getAttribute('aria-expanded') === 'true';
-                this.setAttribute('aria-expanded', !expanded);
-                this.parentElement.classList.toggle('expanded');
-            });
-
-            header.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    this.click();
-                }
-            });
-        });
-    </script>
+    <script src="/scripts.js"></script>
 </body>
 </html>

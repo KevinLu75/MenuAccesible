@@ -1,0 +1,28 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.category-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+.food-list {
+    display: none;
+    list-style-type: none;
+    padding-left: 0; /* Opcional: elimina la sangría izquierda */
+}
+.expanded .food-list {
+    display: block;
+}
+
+.description {
+    display: none;
+    margin: 5px 0;
+}
+
+.food-item[aria-expanded="true"] .description {
+    display: block;
+}
