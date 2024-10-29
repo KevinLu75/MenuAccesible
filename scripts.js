@@ -23,11 +23,20 @@ document.querySelectorAll('.category-header').forEach(header => {
 document.querySelectorAll('.food-item').forEach(item => {
     item.addEventListener('click', function() {
         const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
+        
+        // Cierra cualquier descripción previamente expandida
+        document.querySelectorAll('.food-item[aria-expanded="true"]').forEach(openItem => {
+            openItem.setAttribute('aria-expanded', 'false');
+        });
+        descriptionContainer.style.display = 'none';
+        descriptionContainer.textContent = ''; // Limpia el contenido
+        if (descriptionContainer.parentNode) {
+            descriptionContainer.parentNode.removeChild(descriptionContainer);
+        }
 
-        // Alterna la visibilidad de la descripción
+        // Expandir la nueva descripción
         if (!expanded) {
-            // Configura el contenido, muestra el contenedor y le da foco
+            this.setAttribute('aria-expanded', 'true');
             descriptionContainer.textContent = this.getAttribute('data-description');
             descriptionContainer.style.display = 'block';
 
@@ -37,13 +46,7 @@ document.querySelectorAll('.food-item').forEach(item => {
             // Mueve el foco a la descripción para que el lector de pantalla lo lea
             descriptionContainer.focus();
         } else {
-            // Oculta, limpia y remueve el contenedor de descripción, y devuelve el foco al platillo
-            descriptionContainer.style.display = 'none';
-            descriptionContainer.textContent = '';  // Limpia el contenido
-            if (descriptionContainer.parentNode) {
-                descriptionContainer.parentNode.removeChild(descriptionContainer);
-            }
-            // Devuelve el foco al elemento actual del platillo
+            // Si el platillo se contrae, se devuelve el foco
             this.focus();
         }
     });
