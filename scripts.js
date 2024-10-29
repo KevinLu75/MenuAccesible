@@ -58,3 +58,21 @@ document.querySelectorAll('.food-item').forEach(item => {
         }
     });
 });
+
+// Función para contraer el platillo al hacer clic en la descripción mostrada
+descriptionContainer.addEventListener('click', function() {
+    const expandedItem = document.querySelector('.food-item[aria-expanded="true"]');
+    if (expandedItem) {
+        expandedItem.setAttribute('aria-expanded', 'false');
+    }
+    descriptionContainer.style.display = 'none';
+    descriptionContainer.textContent = ''; // Limpia el contenido
+    if (descriptionContainer.parentNode) {
+        descriptionContainer.parentNode.removeChild(descriptionContainer);
+    }
+
+    // Devuelve el foco al elemento del platillo
+    if (expandedItem) {
+        expandedItem.focus();
+    }
+});
