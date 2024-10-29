@@ -19,22 +19,21 @@ document.querySelectorAll('.category-header').forEach(header => {
     });
 });
 
-// Función para controlar la expansión de las descripciones de los platillos
+// Función para manejar la expansión de las descripciones de los platillos
 document.querySelectorAll('.food-item').forEach(item => {
     item.addEventListener('click', function() {
         const expanded = this.getAttribute('aria-expanded') === 'true';
-        
+
         // Cierra cualquier descripción previamente expandida
         document.querySelectorAll('.food-item[aria-expanded="true"]').forEach(openItem => {
             openItem.setAttribute('aria-expanded', 'false');
         });
-        descriptionContainer.style.display = 'none';
-        descriptionContainer.textContent = ''; // Limpia el contenido
+        // Remueve el contenedor de descripción anterior
         if (descriptionContainer.parentNode) {
             descriptionContainer.parentNode.removeChild(descriptionContainer);
         }
-
-        // Expandir la nueva descripción
+        
+        // Si el elemento actual no estaba expandido, expandirlo
         if (!expanded) {
             this.setAttribute('aria-expanded', 'true');
             descriptionContainer.textContent = this.getAttribute('data-description');
@@ -43,10 +42,12 @@ document.querySelectorAll('.food-item').forEach(item => {
             // Inserta el contenedor justo después del elemento expandido
             this.parentNode.insertBefore(descriptionContainer, this.nextSibling);
 
-            // Mueve el foco a la descripción para que el lector de pantalla lo lea
-            descriptionContainer.focus();
+            // Mueve el foco al contenedor de descripción con un breve retraso para que el lector de pantalla lo lea correctamente
+            setTimeout(() => {
+                descriptionContainer.focus();
+            }, 50);
         } else {
-            // Si el platillo se contrae, se devuelve el foco
+            // Si el platillo se contrae, se devuelve el foco al platillo
             this.focus();
         }
     });
