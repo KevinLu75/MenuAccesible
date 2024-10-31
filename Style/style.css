@@ -54,6 +54,16 @@ body {
     margin-left: 20px;
 }
 
+/* Solo visible para lectores de pantalla */
+.screen-reader-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 /* Estilos del botón de alternancia */
 .theme-toggle {
     position: fixed;
