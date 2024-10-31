@@ -7,8 +7,8 @@
     <title>Menú Accesible</title>
 </head>
 <body>
-    <!-- Botón para cambiar el modo de color -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro/alto contraste">
+     <!-- Botón para cambiar el modo de color -->
+     <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro/alto contraste">
         🌙 Modo Oscuro
     </button>
 
@@ -18,62 +18,56 @@
     </div>
     <h1>Nuestro Menú</h1>
 
-    <!-- Menú accesible con descripciones y estado expandido o contraído -->
+
     <section>
-        <h2 class="category-header" role="text" tabindex="0" aria-expanded="false" aria-controls="desayunos-list" aria-label="Desayunos, contraído">
-            <span>Desayunos</span>
-        </h2>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="desayunos-list">Desayunos</h2>
         <ul id="desayunos-list" class="food-list" role="list" aria-labelledby="desayunos-list">
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Chilaquiles con salsa verde o roja, acompañados de crema y queso." aria-label="Chilaquiles - $135, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Chilaquiles con salsa verde o roja, acompañados de crema y queso.">
                 Chilaquiles - $135
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Delicioso desayuno norteño con carne asada y frijoles." aria-label="Norteño - $210, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Delicioso desayuno norteño con carne asada y frijoles.">
                 Norteño - $210
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Machaca de res desmenuzada con huevo y tortillas de maíz." aria-label="Machaca de res - $170, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Machaca de res desmenuzada con huevo y tortillas de maíz.">
                 Machaca de res - $170
             </li>
         </ul>
+        <!-- Contenedor de descripción accesible -->
+        <!-- <div id="description" class="description-container" aria-live="polite"></div> -->
     </section>
 
     <section>
-        <h2 class="category-header" role="text" tabindex="0" aria-expanded="false" aria-controls="regionales-list" aria-label="Regionales, contraído">
-            <span>Regionales</span>
-        </h2>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="regionales-list">Regionales</h2>
         <ul id="regionales-list" class="food-list" role="list" aria-labelledby="regionales-list">
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Dos piezas de tamal de elote refrito, natural o gratinado, acompañado de frijoles refritos." aria-label="Tamales - $150, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Dos piezas de tamal de elote refrito, natural o gratinado, acompañado de frijoles refritos.">
                 Tamales - $150
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Delicioso hígado 200 g al gusto, encebollado o ranchero, acompañado de frijoles refritos y panela." aria-label="Hígado - $140, contraído">
-                Hígado - $140
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Delicioso hígado 200 g al gusto, encebollado o ranchero, acompañado de frijoles refritos y panela.">
+                Higado - $140
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="El tradicional bistec 160 g con el toque de la casa, acompañado de frijoles refritos y panela." aria-label="Bistec ranchero con papas - $215, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="El tradicional bistec 160 g con el toque de la casa, acompañado de frijoles refritos y panela.">
                 Bistec ranchero con papas - $215
             </li>
         </ul>
     </section>
 
     <section>
-        <h2 class="category-header" role="text" tabindex="0" aria-expanded="false" aria-controls="Sopas-list" aria-label="Sopas, contraído">
-            <span>Sopas</span>
-        </h2>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="Sopas-list">Sopas</h2>
         <ul id="Sopas-list" class="food-list" role="list" aria-labelledby="Sopas-list">
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Tradicional caldo de pollo 110 g, con arroz y verdura guisada." aria-label="Caldo de pollo - $110, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Tradicional caldo de pollo 110 g, con arroz y verdura guisada.">
                 Caldo de pollo - $110
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Caldo de queso oreado 90 g, con papa, chile verde rescolado, tomate, cebolla y cilantro." aria-label="Caldo de queso - $110, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Caldo de queso oreado 90 g, con papa, chile verde rescolado, tomate, cebolla y cilantro.">
                 Caldo de queso - $110
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Acompañada de chipotle, aguacate y queso 80 g, bañado con crema." aria-label="Sopa de tortilla - $120, contraído">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Acompañada de chipotle, aguacate y queso 80 g, bañado con crema.">
                 Sopa de tortilla - $120
             </li>
         </ul>
     </section>
 
     <section>
-        <h2 class="category-header" role="text" tabindex="0" aria-expanded="false" aria-controls="bebidas-list" aria-label="Bebidas, contraído">
-            <span>Bebidas</span>
-        </h2>
+        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="bebidas-list">Bebidas</h2>
         <ul id="bebidas-list" class="food-list" role="list" aria-labelledby="bebidas-list">
             <li role="listitem">
                 Agua embotellada - $15
