@@ -76,3 +76,34 @@ descriptionContainer.addEventListener('click', function() {
         expandedItem.focus();
     }
 });
+
+// Seleccionar el botón de alternancia
+const themeToggle = document.getElementById('theme-toggle');
+
+// Función para aplicar el modo oscuro o claro según la preferencia guardada
+function applyStoredTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️ Modo Claro';
+    } else {
+        document.body.classList.remove('dark-mode');
+        themeToggle.textContent = '🌙 Modo Oscuro';
+    }
+}
+
+// Llamar a la función al cargar la página para aplicar el tema almacenado
+applyStoredTheme();
+
+// Función para alternar el modo oscuro y almacenar la preferencia
+themeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.textContent = '☀️ Modo Claro';
+        localStorage.setItem('theme', 'dark'); // Almacena la preferencia en modo oscuro
+    } else {
+        themeToggle.textContent = '🌙 Modo Oscuro';
+        localStorage.setItem('theme', 'light'); // Almacena la preferencia en modo claro
+    }
+});

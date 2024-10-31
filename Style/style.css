@@ -3,6 +3,16 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
 }
+
+.Titulo{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.Logo{
+    width: 80px;
+}
 .category-header {
     background-color: #f0f0f0;
     padding: 10px;
@@ -13,7 +23,9 @@ body {
     display: none;
     list-style-type: none;
     padding-left: 0; /* Opcional: elimina la sangría izquierda */
-    margin-top: 20px;
+    margin-top: 10px;
+    border: 1px solid gray;
+    border-radius:8px ;
 }
 .expanded .food-list {
     display: block;
@@ -28,10 +40,52 @@ body {
     display: block;
 }
 .food-item{
-    padding-top: 20px;
+    padding: 10px;
+    border-top: 1px solid gray;
+    border-radius: 8px;
 }
 
 .description-container {
     display: none;
     margin-left: 20px;
+}
+
+/* Estilos del botón de alternancia */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .category-header {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+.dark-mode .food-item {
+    border-color: #555;
+}
+
+.dark-mode .food-list {
+    border-color: #555;
+}
+
+.dark-mode .theme-toggle {
+    background-color: #eee;
+    color: #333;
 }
