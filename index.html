@@ -14,25 +14,23 @@
 
     <div class="Titulo">
         <img src="/imgs/los jardines.jpg" alt="Logo Los jardines" class="Logo">
-        <h1 aria-hidden="true">Los Jardines</h1> <!-- Ocultamos rol de encabezado -->
-        <span class="screen-reader-only">Los Jardines</span> <!-- Solo para lectura -->
+        <h1>Los Jardines</h1>
     </div>
-    <h1 aria-hidden="true">Nuestro Menú</h1>
-    <span class="screen-reader-only">Nuestro Menú</span>
+    <h1>Nuestro Menú</h1>
 
     <!-- Menú accesible con descripciones y estado expandido o contraído -->
     <section>
-        <h2 class="category-header" tabindex="0" aria-expanded="false" aria-controls="desayunos-list">
+        <h2 class="category-header" role="text" tabindex="0" aria-expanded="false" aria-controls="desayunos-list" aria-label="Desayunos, contraído">
             <span>Desayunos</span>
         </h2>
         <ul id="desayunos-list" class="food-list" role="list" aria-labelledby="desayunos-list">
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Chilaquiles con salsa verde o roja, acompañados de crema y queso.">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Chilaquiles con salsa verde o roja, acompañados de crema y queso." aria-label="Chilaquiles - $135, contraído">
                 Chilaquiles - $135
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Delicioso desayuno norteño con carne asada y frijoles.">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Delicioso desayuno norteño con carne asada y frijoles." aria-label="Norteño - $210, contraído">
                 Norteño - $210
             </li>
-            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Machaca de res desmenuzada con huevo y tortillas de maíz.">
+            <li tabindex="0" aria-expanded="false" class="food-item" data-description="Machaca de res desmenuzada con huevo y tortillas de maíz." aria-label="Machaca de res - $170, contraído">
                 Machaca de res - $170
             </li>
         </ul>

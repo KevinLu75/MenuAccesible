@@ -28,7 +28,6 @@ document.querySelectorAll('.food-item').forEach(item => {
         document.querySelectorAll('.food-item[aria-expanded="true"]').forEach(openItem => {
             openItem.setAttribute('aria-expanded', 'false');
         });
-        
         // Remueve el contenedor de descripción anterior
         if (descriptionContainer.parentNode) {
             descriptionContainer.parentNode.removeChild(descriptionContainer);
