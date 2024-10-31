@@ -4,29 +4,32 @@ body {
     padding: 20px;
 }
 
-.Titulo{
+.Titulo {
     display: flex;
     align-items: baseline;
     gap: 10px;
 }
 
-.Logo{
+.Logo {
     width: 80px;
 }
+
 .category-header {
     background-color: #f0f0f0;
     padding: 10px;
     cursor: pointer;
     border: 1px solid #ccc;
 }
+
 .food-list {
     display: none;
     list-style-type: none;
-    padding-left: 0; /* Opcional: elimina la sangría izquierda */
+    padding-left: 0;
     margin-top: 10px;
     border: 1px solid gray;
-    border-radius:8px ;
+    border-radius: 8px;
 }
+
 .expanded .food-list {
     display: block;
 }
@@ -39,7 +42,8 @@ body {
 .food-item[aria-expanded="true"] .description {
     display: block;
 }
-.food-item{
+
+.food-item {
     padding: 10px;
     border-top: 1px solid gray;
     border-radius: 8px;

@@ -9,6 +9,7 @@ document.querySelectorAll('.category-header').forEach(header => {
     header.addEventListener('click', function() {
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !expanded);
+        this.setAttribute('aria-label', `${this.textContent}, ${expanded ? 'contraído' : 'expandido'}`);
         this.parentElement.classList.toggle('expanded');
     });
 
@@ -27,6 +28,7 @@ document.querySelectorAll('.food-item').forEach(item => {
         // Cierra cualquier descripción previamente expandida
         document.querySelectorAll('.food-item[aria-expanded="true"]').forEach(openItem => {
             openItem.setAttribute('aria-expanded', 'false');
+            openItem.setAttribute('aria-label', `${openItem.textContent}, contraído`);
         });
         // Remueve el contenedor de descripción anterior
         if (descriptionContainer.parentNode) {
@@ -36,6 +38,7 @@ document.querySelectorAll('.food-item').forEach(item => {
         // Si el elemento actual no estaba expandido, expandirlo
         if (!expanded) {
             this.setAttribute('aria-expanded', 'true');
+            this.setAttribute('aria-label', `${this.textContent}, expandido`);
             descriptionContainer.textContent = this.getAttribute('data-description');
             descriptionContainer.style.display = 'block';
 
@@ -64,6 +67,7 @@ descriptionContainer.addEventListener('click', function() {
     const expandedItem = document.querySelector('.food-item[aria-expanded="true"]');
     if (expandedItem) {
         expandedItem.setAttribute('aria-expanded', 'false');
+        expandedItem.setAttribute('aria-label', `${expandedItem.textContent}, contraído`);
     }
     descriptionContainer.style.display = 'none';
     descriptionContainer.textContent = ''; // Limpia el contenido
