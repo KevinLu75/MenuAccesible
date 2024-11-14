@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Accesible</title>
+    <link rel="stylesheet" href="/Style/style2.css">
+</head>
+<body>
+    <nav>
+        <h1>Menú</h1>
+        <!-- Sección 1 del menú -->
+        <section>
+            <button aria-expanded="false" aria-controls="seccion1" class="seccion-toggle">
+                Entradas
+            </button>
+            <ul id="seccion1" class="seccion-contenido" hidden>
+                <li>
+                    <button aria-expanded="false" aria-controls="platillo1-desc" class="platillo-toggle">
+                        Ensalada César
+                    </button>
+                    <p id="platillo1-desc" class="platillo-descripcion" hidden>
+                        Ensalada con lechuga romana, crutones, y aderezo César.
+                    </p>
+                </li>
+                <li>
+                    <button aria-expanded="false" aria-controls="platillo2-desc" class="platillo-toggle">
+                        Sopa de tomate
+                    </button>
+                    <p id="platillo2-desc" class="platillo-descripcion" hidden>
+                        Sopa cremosa de tomate con albahaca fresca.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sección 2 del menú -->
+        <section>
+            <button aria-expanded="false" aria-controls="seccion2" class="seccion-toggle">
+                Platos principales
+            </button>
+            <ul id="seccion2" class="seccion-contenido" hidden>
+                <li>
+                    <button aria-expanded="false" aria-controls="platillo3-desc" class="platillo-toggle">
+                        Pollo al horno
+                    </button>
+                    <p id="platillo3-desc" class="platillo-descripcion" hidden>
+                        Pollo horneado con hierbas aromáticas y vegetales asados.
+                    </p>
+                </li>
+                <li>
+                    <button aria-expanded="false" aria-controls="platillo4-desc" class="platillo-toggle">
+                        Lasagna de carne
+                    </button>
+                    <p id="platillo4-desc" class="platillo-descripcion" hidden>
+                        Lasagna clásica con carne, tomate y queso.
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </nav>
+
+    <script src="script2.js"></script>
+</body>
+</html>
