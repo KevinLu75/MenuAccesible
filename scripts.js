@@ -7,6 +7,8 @@ descriptionContainer.setAttribute('tabindex', '-1'); // Permite que el contenedo
 // Función para controlar la expansión y contracción de las categorías
 document.querySelectorAll('.category-header').forEach(header => {
     header.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+
         // Contrae cualquier categoría previamente expandida
         document.querySelectorAll('.category-header[aria-expanded="true"]').forEach(openHeader => {
             openHeader.setAttribute('aria-expanded', 'false');
@@ -14,11 +16,12 @@ document.querySelectorAll('.category-header').forEach(header => {
             document.getElementById(openHeader.getAttribute('aria-controls')).hidden = true;
         });
 
-        // Expande la categoría actual
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        this.parentElement.classList.toggle('expanded');
-        document.getElementById(this.getAttribute('aria-controls')).hidden = expanded;
+        // Si la categoría actual no estaba expandida, expándela
+        if (!expanded) {
+            this.setAttribute('aria-expanded', 'true');
+            this.parentElement.classList.add('expanded');
+            document.getElementById(this.getAttribute('aria-controls')).hidden = false;
+        }
     });
 
     header.addEventListener('keypress', function(event) {
