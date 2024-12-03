@@ -7,9 +7,18 @@ descriptionContainer.setAttribute('tabindex', '-1'); // Permite que el contenedo
 // Función para controlar la expansión y contracción de las categorías
 document.querySelectorAll('.category-header').forEach(header => {
     header.addEventListener('click', function() {
+        // Contrae cualquier categoría previamente expandida
+        document.querySelectorAll('.category-header[aria-expanded="true"]').forEach(openHeader => {
+            openHeader.setAttribute('aria-expanded', 'false');
+            openHeader.parentElement.classList.remove('expanded');
+            document.getElementById(openHeader.getAttribute('aria-controls')).hidden = true;
+        });
+
+        // Expande la categoría actual
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !expanded);
         this.parentElement.classList.toggle('expanded');
+        document.getElementById(this.getAttribute('aria-controls')).hidden = expanded;
     });
 
     header.addEventListener('keypress', function(event) {
