@@ -20,16 +20,18 @@ document.querySelectorAll('.category-header').forEach(header => {
         if (!expanded) {
             this.setAttribute('aria-expanded', 'true');
             this.parentElement.classList.add('expanded');
-            const listId = this.getAttribute('aria-controls');
-            const list = document.getElementById(listId);
-            list.hidden = false;
+            document.getElementById(this.getAttribute('aria-controls')).hidden = false;
 
-            // Mueve el foco al primer elemento de la lista
             const firstItem = list.querySelector('.food-item');
             if (firstItem) {
-                firstItem.focus();
+                setTimeout(() => {
+                    firstItem.focus();
+                }, 50);
             }
+            
         }
+
+        
     });
 
     header.addEventListener('keypress', function(event) {
