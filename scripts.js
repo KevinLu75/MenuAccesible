@@ -22,6 +22,9 @@ document.querySelectorAll('.category-header').forEach(header => {
             this.parentElement.classList.add('expanded');
             document.getElementById(this.getAttribute('aria-controls')).hidden = false;
 
+            const listId = this.getAttribute('aria-controls');
+            const list = document.getElementById(listId);
+            list.hidden = false;
             const firstItem = list.querySelector('.food-item');
             if (firstItem) {
                 setTimeout(() => {
